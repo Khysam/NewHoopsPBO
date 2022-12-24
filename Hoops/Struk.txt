@@ -1,0 +1,4 @@
+Data Pembelian Sepatu : 
+Merk Sepatu : Jordan
+Total Pesanan : 10
+Total Harga : 500000

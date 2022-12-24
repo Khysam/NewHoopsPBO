@@ -1,8 +1,16 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-public class User {
+public class User extends Pelanggan{
     protected int id;
     protected int pesanan;
+    public int mengisi(){
+
+        return 0;
+
+    }
+    @Override
+    public void melihat(){
+    }
 
     protected void melihat(int pesanan){
         System.out.println("id user :"+id);
@@ -20,7 +28,11 @@ public class User {
     }
     protected int mengisi(int n){
         Scanner in = new Scanner(System.in);
+        Scanner Sepatu = new Scanner(System.in);
+        Sepatu nama = new Sepatu();
         setId(id(n));
+        System.out.println("Masukkan merk sepatu : ");
+        nama.nama_sepatu = Sepatu.nextLine();
         System.out.print("Masukkan Total Pemesanan ");
         pesanan = in.nextInt();
         return setPesanan(pesanan);

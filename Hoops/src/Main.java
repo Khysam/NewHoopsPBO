@@ -1,5 +1,8 @@
-import java.util.ArrayList;
 import java.util.*;
+import java.io.File;
+import java.io.PrintWriter;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
 
 public class Main {
     int z;
@@ -12,6 +15,7 @@ public class Main {
         Member m = new Member();
         Transaksi t = new Transaksi();
         Scanner in = new Scanner(System.in);
+        Scanner sepatu = new Scanner(System.in);
         Main ab = new Main();
         ArrayList ue = new ArrayList();
         int n = ab.z;
@@ -22,6 +26,7 @@ public class Main {
         int pesanan;
         boolean ad;
         String ph="y";
+        Sepatu check = new Sepatu();
 
 
         while (ph.equals("y")) {
@@ -100,6 +105,24 @@ public class Main {
 
             System.out.println("kembali ke menu awal y/n :");
             ph = in.next();
+            try{
+
+                File file = new File("Struk.txt");
+                PrintWriter output = new PrintWriter(file);
+                check.getHarga();
+                System.out.println("    Data Pembelian Sepatu :     ");
+                System.out.println("Merk Sepatu : "+u.getPesanan());
+                System.out.println("Total Pesanan : "+u.pesanan);
+                System.out.println("Total Harga : "+harga);
+
+                output.println("Data Pembelian Sepatu : ");
+                output.println("Merk Sepatu : "+u.getPesanan());
+                output.println("Total Pesanan : "+u.pesanan);
+                output.print("Total Harga : "+harga);
+                output.close();
+            } catch (FileNotFoundException e){
+                System.out.println("Input melebihi batas");
+            }
         }
     }
 }
